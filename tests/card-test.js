@@ -1,5 +1,9 @@
 import { expect } from 'chai';
-import card from '../scripts/card'
+import card from '../scripts/cards'
 
-describe('card', () => {
-})
+// describe('card', () => {
+//
+// })
+
+
+console.log('hey');
