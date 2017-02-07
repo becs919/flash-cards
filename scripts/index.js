@@ -1,5 +1,6 @@
 const card = require('cards');
 const guess = require('guess');
+const deck = require('deck');
 
 
 

@@ -12,7 +12,7 @@ describe('Guess', () => {
 
   it('should have a repsonse', () => {
     let guess = new Guess({response: 'Juneau'});
-    assert.equal(guess.response, 'Juneau');
+    expect(guess.response).to.deep.equal('Juneau');
   });
 
 
