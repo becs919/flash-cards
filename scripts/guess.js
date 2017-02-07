@@ -8,7 +8,7 @@ class Guess {
     let lowerGuess = guess.response.toLowerCase()
     let lowerAnswer = guess.card.answer.toLowerCase()
 
-    if (lowerGuess === lowerAnswer) {
+    if (lowerAnswer === lowerGuess) {
       this.correct = true;
       return 'Correct!'
     } else {
@@ -18,8 +18,6 @@ class Guess {
      // return answer === userGuess ? 'correct' : 'wrong';
   }
 }
-
-
 
 
 
