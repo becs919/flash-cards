@@ -2,24 +2,24 @@ class Guess {
   constructor ({response, card}) {
     this.response = response;
     this.card = card;
+    this.correct = card.answer === response ? true : false
   }
 
-  feedback(guess) {
-    let lowerGuess = guess.response.toLowerCase()
-    let lowerAnswer = guess.card.answer.toLowerCase()
+  feedback() {
+    // let lowerGuess = guess.response.toLowerCase()
+    // let lowerAnswer = guess.card.answer.toLowerCase()
 
-    if (lowerGuess === lowerAnswer) {
-      this.correct = true;
+    // if (lowerAnswer === lowerGuess) {
+    if (this.correct) {
+      // this.correct = true;
       return 'Correct!'
     } else {
-      this.correct = false;
+      // this.correct = false;
       return 'Youre wrong!'
     }
      // return answer === userGuess ? 'correct' : 'wrong';
   }
 }
-
-
 
 
 
