@@ -56,7 +56,6 @@ describe('rounds functionality', () => {
     let round = new Round(deck)
 
     round.recordGuess('Juneau')
-    console.log(round.guesses);
     assert.equal(round.guesses.length, 1)
   })
 
@@ -88,6 +87,16 @@ describe('rounds functionality', () => {
 
     round.recordGuess('Juneau')
     assert.equal(round.numberCorrect, 1)
+  })
+
+  it('should tell you if the response is not correct', () => {
+    let card1 = new Card({question: "What is the capital of Alaska?", answer: "Juneau"})
+    let card2 = new Card({question: "Approximately how many miles are in one astronomical unit?", answer: "93,000,000"})
+    let deck  = new Deck([card1, card2])
+    let round = new Round(deck)
+
+    round.recordGuess('Anchorage')
+    assert.equal(round.numberCorrect, 0)
   })
 
 
