@@ -152,18 +152,46 @@ describe('rounds functionality', () => {
     round.recordGuess('Anchorage')
     assert.equal(round.numberCorrect, 0)
   });
+
+  it('should remove card from deck after guessing and keep tracks of number correct', () => {
+    let card1 = new Card({
+      question: "What is the capital of Alaska?",
+      answer: "Juneau"
+    })
+    let card2 = new Card({
+      question: "Approximately how many miles are in one astronomical unit?",
+      answer: "93,000,000"
+    })
+    let deck  = new Deck([card1, card2])
+    let round = new Round(deck)
+
+    assert.equal(round.numberCorrect, 0)
+    assert.equal(deck.count(), 2)
+    round.recordGuess('Juneau')
+    assert.equal(round.numberCorrect, 1)
+    assert.equal(deck.count(), 1)
+    round.recordGuess('93,000,000')
+    assert.equal(round.numberCorrect, 2)
+    assert.equal(deck.count(), 0)
+  });
+
+  it('should keep track of percentage correct', () => {
+    let card1 = new Card({
+      question: "What is the capital of Alaska?",
+      answer: "Juneau"
+    })
+    let card2 = new Card({
+      question: "Approximately how many miles are in one astronomical unit?",
+      answer: "93,000,000"
+    })
+    let deck  = new Deck([card1, card2])
+    let round = new Round(deck)
+
+
+    round.recordGuess('Juneau')
+    assert.equal(round.numberCorrect, 1)
+    round.recordGuess('95,000,000')
+    assert.equal(round.numberCorrect, 1)
+    assert.equal(round.percentCorrect(), 50)
+  });
 });
-
-
-// round.currentCard()
-// => Card { answer: "93,000,000", question: "Approximately how many miles are in one astronomical unit?"}
-// round.recordGuess("2")
-// => Guess {card: Card { answer:"93,000,000", question: "Approximately how many miles are in one astronomical unit?"}, response: "2"}
-// round.guesses.length
-// => 2
-// round.guesses[1].feedback
-// => "Incorrect."
-// round.numberCorrect
-// => 1
-// round.percentCorrect()
-// => 50

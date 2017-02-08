@@ -22,7 +22,13 @@ class Round {
       this.numberCorrect++;
     }
 
+    this.deck.cards.shift()
     return this.guesses
+  };
+
+  percentCorrect(){
+    let percentage = (this.numberCorrect/this.guesses.length)*100
+    return percentage
   };
 };
 
