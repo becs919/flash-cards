@@ -17,7 +17,7 @@ describe('Guess', () => {
     let guess = new Guess({
       response: 'Juneau',
       card: card
-    })
+    });
 
     expect(guess.response).to.deep.equal('Juneau');
   });
@@ -27,11 +27,11 @@ describe('Guess', () => {
     let card = new Card({
       question:"What is the capital of Alaska?",
       answer:"Juneau"
-    })
+    });
     let guess = new Guess({
       response: "north north west",
       card: card
-    })
+    });
 
     assert.equal(guess.card, card);
   });
@@ -40,11 +40,11 @@ describe('Guess', () => {
     let card = new Card({
       question:"What is the capital of Alaska?",
       answer:"Juneau"
-    })
+    });
     let guess = new Guess({
       response: "north north west",
       card: card
-    })
+    });
 
     assert.isFunction(guess.feedback);
   });
@@ -53,10 +53,10 @@ describe('Guess', () => {
     let card2 = new Card({
       question: "Describe in words the exact direction that is 697.5° clockwise from due north?",
       answer: "North north west"
-    })
+    });
     let guess = new Guess({
       response: "North north west",
-      card: card2})
+      card: card2});
 
     guess.feedback(guess);
     assert.equal(guess.correct, true);
@@ -66,10 +66,10 @@ describe('Guess', () => {
     let card2 = new Card({
       question: "Describe in words the exact direction that is 697.5° clockwise from due north?",
       answer: "North north west"
-    })
+    });
     let guess = new Guess({
       response: "North north east",
-      card: card2})
+      card: card2});
 
     assert.equal(guess.correct, false);
   });

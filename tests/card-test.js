@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import { assert } from 'chai';
-import Card from '../scripts/cards'
+import Card from '../scripts/cards';
 
 describe('Card', () => {
 
@@ -33,7 +33,7 @@ describe('Card', () => {
       question: 'What is the capital of Alaska?'
     });
 
-    assert.equal(card.answer, 'Juneau')
+    assert.equal(card.answer, 'Juneau');
     assert.equal(card.question, 'What is the capital of Alaska?');
 });
 });
