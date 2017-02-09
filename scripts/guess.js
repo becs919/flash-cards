@@ -3,12 +3,11 @@ class Guess {
     this.response = response;
     this.card = card;
     this.correct = card.answer === response ? true : false
-  }
+  };
 
   feedback() {
     // let lowerGuess = guess.response.toLowerCase()
     // let lowerAnswer = guess.card.answer.toLowerCase()
-
     // if (lowerAnswer === lowerGuess) {
     if (this.correct) {
       // this.correct = true;
@@ -18,10 +17,7 @@ class Guess {
       return 'Youre wrong!'
     }
      // return answer === userGuess ? 'correct' : 'wrong';
-  }
-}
-
-
-
+  };
+};
 
 export default Guess
