@@ -1,7 +1,5 @@
-import Card from '../scripts/cards'
+import Card from './cards'
 let fs = require('fs');
-
-// const filename = '../scripts/cards.txt'
 
 class CardsGenerator{
   constructor(filename){
@@ -9,7 +7,7 @@ class CardsGenerator{
   }
 
   readFile(filename) {
-    let words = fs.readFileSync('./scripts/cards.txt', 'utf8').trim().split('\n')
+    let words = fs.readFileSync(filename, 'utf8').trim().split('\n')
 
     let mapWords = words.map((lines)=> {
       return lines.split(',')

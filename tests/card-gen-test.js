@@ -1,24 +1,31 @@
 import { expect } from 'chai';
 import { assert } from 'chai';
 import CardsGenerator from '../scripts/card-gen'
-import Card from '../scripts/cards'
+
+let filename = 'cards.txt'
 
 
 describe('CardGenerator', () => {
+  // const filename = '../scripts/cards.txt'
+  let cardsGenerator = new CardsGenerator(filename)
+
   it('should have a textfile', () => {
     assert.isFunction(CardsGenerator)
   });
 
+  it('should have a readFile function', () => {
+
+    assert.isFunction(cardsGenerator.readFile)
+  })
+
   it('should take a filename', () => {
-    const filename = '../scripts/cards.txt'
-    let cardsGenerator = new CardsGenerator(filename)
-    assert.equal(cardsGenerator.filename, '../scripts/cards.txt')
+
+    assert.equal(cardsGenerator.filename, 'cards.txt')
   });
 
   it('should know how many cards there are', () => {
-    const filename = '../scripts/cards.txt'
-    let cardsGenerator = new CardsGenerator(filename)
     let cards = cardsGenerator.readFile(filename)
+
     assert.equal(cards.length, 4)
   });
 
