@@ -2,8 +2,8 @@ class Guess {
   constructor ({response, card}) {
     this.response = response;
     this.card = card;
-    this.correct = card.answer === response ? true : false
-  };
+    this.correct = card.answer === response ? true : false;
+  }
 
   feedback() {
     // let lowerGuess = guess.response.toLowerCase()
@@ -11,13 +11,13 @@ class Guess {
     // if (lowerAnswer === lowerGuess) {
     if (this.correct) {
       // this.correct = true;
-      return 'Correct!'
+      return 'Correct!';
     } else {
       // this.correct = false;
-      return 'Youre wrong!'
+      return 'Youre wrong!';
     }
      // return answer === userGuess ? 'correct' : 'wrong';
-  };
-};
+  }
+}
 
-export default Guess
+export default Guess;
