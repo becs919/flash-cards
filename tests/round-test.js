@@ -167,14 +167,18 @@ describe('rounds functionality', () => {
 
     assert.equal(round.numberCorrect, 0)
     assert.equal(deck.count(), 2)
+
     round.recordGuess('Juneau')
+
     assert.equal(round.numberCorrect, 1)
     assert.equal(deck.count(), 1)
+
     round.recordGuess('93,000,000')
+
     assert.equal(round.numberCorrect, 2)
     assert.equal(deck.count(), 0)
   });
-
+  
   it('should keep track of percentage correct', () => {
     let card1 = new Card({
       question: "What is the capital of Alaska?",
