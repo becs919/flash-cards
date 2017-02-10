@@ -10,17 +10,11 @@ class CardsGenerator{
     let words = fs.readFileSync(filename, 'utf8').trim().split('\n');
 
     let mapWords = words.map((lines)=> {
-      return lines.split(',');
+      let pair = lines.split(',');
+      return new Card({question: pair[0], answer: pair[1]})
     });
 
-    let objectWords = mapWords.reduce((a,b) => {
-      let card = new Card({question: b[0], answer: b[1]});
-      a.push(card);
-
-      return a;
-    }, []);
-
-    return objectWords;
+    return mapWords;
   }
 }
 

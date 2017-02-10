@@ -35,5 +35,5 @@ describe('Card', () => {
 
     assert.equal(card.answer, 'Juneau');
     assert.equal(card.question, 'What is the capital of Alaska?');
-});
+  });
 });
